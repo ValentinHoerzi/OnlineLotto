@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Tippeingabe</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Z1: </ion-label>
+    <ion-input [(ngModel)]="numbers[0]"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Z2: </ion-label>
+    <ion-input [(ngModel)]="numbers[1]"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Z3: </ion-label>
+    <ion-input [(ngModel)]="numbers[2]"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Z4: </ion-label>
+    <ion-input [(ngModel)]="numbers[3]"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Z5: </ion-label>
+    <ion-input [(ngModel)]="numbers[4]"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Z6: </ion-label>
+    <ion-input [(ngModel)]="numbers[5]"></ion-input>
+  </ion-item>
+
+  <ion-button *ngIf="tipAddReply?.roundId!==currentRound.roundId" (click)="onSendTip()" expand="block" fill="solid" shape="round">
+    SENDE TIPP
+  </ion-button>
+
+  <ion-button
+    (click)="genRandomTip()"
+    expand="block"
+    fill="outline"
+    shape="round"
+  >
+    ZUFÄLLIGEN TIPP ERZEUGEN
+  </ion-button>
+</ion-content>

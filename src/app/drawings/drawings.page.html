@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ziehungen</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="ion-margin" >
+    <ion-row>
+      <ion-col class="bgh">Id</ion-col>
+      <ion-col class="bgh">Ziehung</ion-col>
+      <ion-col class="bgh">Z1</ion-col>
+      <ion-col class="bgh">Z2</ion-col>
+      <ion-col class="bgh">Z3</ion-col>
+      <ion-col class="bgh">Z4</ion-col>
+      <ion-col class="bgh">Z5</ion-col>
+      <ion-col class="bgh">Z6</ion-col>
+      <ion-col class="bgh">3er</ion-col>
+      <ion-col class="bgh">4er</ion-col>
+      <ion-col class="bgh">5er</ion-col>
+      <ion-col class="bgh">6er</ion-col>
+    </ion-row>
+    <ion-row
+      class="first"
+      *ngFor="let x of roundSummaries; index as i">
+      <ion-col>{{ x.round?.roundId }}.</ion-col>
+      <ion-col>{{ x.round?.finished }}.</ion-col>
+      <ion-col class="bg">{{ x.round?.z1 }}.</ion-col>
+      <ion-col class="bg">{{ x.round?.z2 }}.</ion-col>
+      <ion-col class="bg">{{ x.round?.z3 }}.</ion-col>
+      <ion-col class="bg">{{ x.round?.z4 }}.</ion-col>
+      <ion-col class="bg">{{ x.round?.z5 }}.</ion-col>
+      <ion-col class="bg">{{ x.round?.z6 }}.</ion-col>
+      <ion-col [ngClass]="{win: x.win?.nr3 > 0}">{{ x.win?.nr3 }}.</ion-col>
+      <ion-col [ngClass]="{win: x.win?.nr4 > 0}">{{ x.win?.nr4 }}.</ion-col>
+      <ion-col [ngClass]="{win: x.win?.nr5 > 0}">{{ x.win?.nr5 }}.</ion-col>
+      <ion-col [ngClass]="{win: x.win?.nr6 > 0}">{{ x.win?.nr6 }}.</ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

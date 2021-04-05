@@ -1,0 +1,72 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Lotto </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Aktuelle Runde</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label>UserId: {{user?.userId}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Benutzer: {{currentRound?.nrUsers}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Aktuelle Runde: {{currentRound?.roundId}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Tipps: {{currentRound?.nrTips}}</ion-label>
+      </ion-item>
+      <ion-item *ngIf="tipAddReply?.roundId === currentRound?.roundId">
+        <ion-label>Du hast in dieser Runde mitgemacht!</ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-range
+    min="0" max="6"
+    dualKnobs="true" pin="true"
+    snaps="true" step="1"
+    ticks="true" value="0"
+    color="secondary"
+    [value]="currentRound?.nrTips">
+      <ion-label slot="end">{{currentRound?.nrTips}}/{{currentRound?.nrTipsForFullRound}}</ion-label>
+  </ion-range>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Letzte Ziehung</ion-card-title>
+      <ion-card-subtitle>{{lastRound?.roundId}}. Runde / {{lastRound?.finished}}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Zahl 1: {{lastRound?.z1}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Zahl 2: {{lastRound?.z2}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Zahl 3: {{lastRound?.z3}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Zahl 4: {{lastRound?.z4}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Zahl 5: {{lastRound?.z5}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Zahl 6: {{lastRound?.z6}}</ion-label>
+      </ion-item>
+      <ion-item *ngIf="tipAddReply?.roundId === lastRound?.roundId">
+        <ion-label>Du hast in dieser Runde mitgemacht!</ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

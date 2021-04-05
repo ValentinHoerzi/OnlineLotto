@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Rangliste</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="ion-margin">
+    <ion-row>
+      <ion-col>Nr.</ion-col>
+      <ion-col>Name</ion-col>
+      <ion-col>Price</ion-col>
+    </ion-row>
+    <ion-row
+      class="first"
+      *ngFor="let rank of ranks?.ranklist; index as i" [ngClass]="{first: i === 0,second: i === 1,third: i === 2}">
+      <ion-col>{{ i + 1 }}.</ion-col>
+      <ion-col>{{ rank.name }}</ion-col>
+      <ion-col>{{ rank.price | currency:'EUR'}}</ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

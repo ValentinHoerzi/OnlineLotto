@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Gewinne</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Deine Gewinne</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label>3er: {{win?.nr3}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>4er: {{win?.nr4}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>5er: {{win?.nr5}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>6er: {{win?.nr6}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Gesamtgewinn: {{win?.total | currency:"EUR"}}</ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
